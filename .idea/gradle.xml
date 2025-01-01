@@ -9,7 +9,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/RemoteSurfaceLib" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/embedclient" />
+            <option value="$PROJECT_DIR$/embedserver" />
+            <option value="$PROJECT_DIR$/remotesurfacehost" />
+            <option value="$PROJECT_DIR$/remotesurfaceservice" />
             <option value="$PROJECT_DIR$/remoteviewclient" />
             <option value="$PROJECT_DIR$/remoteviewserver" />
           </set>

@@ -5,6 +5,18 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="embedclient">
+        <State />
+      </entry>
+      <entry key="embedserver">
+        <State />
+      </entry>
+      <entry key="remotesurfacehost">
+        <State />
+      </entry>
+      <entry key="remotesurfaceservice">
+        <State />
+      </entry>
       <entry key="remoteviewclient">
         <State />
       </entry>

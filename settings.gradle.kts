@@ -17,3 +17,8 @@ rootProject.name = "RemoteDemo"
 include(":app")
 include(":remoteviewserver")
 include(":remoteviewclient")
+include(":remotesurfacehost")
+include(":remotesurfaceservice")
+include(":RemoteSurfaceLib")
+include(":embedserver")
+include(":embedclient")
