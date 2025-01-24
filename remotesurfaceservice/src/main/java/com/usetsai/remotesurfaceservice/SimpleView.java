@@ -3,8 +3,10 @@ package com.usetsai.remotesurfaceservice;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 
 public class SimpleView extends LinearLayout {
 
+    private static final String TAG = "SimpleView";
     private TextView mTextView;
     private ImageView mImageView;
     private boolean mTextScale = false;
@@ -61,6 +64,23 @@ public class SimpleView extends LinearLayout {
         editText.setLayoutParams(new ViewGroup.LayoutParams(400,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         childLLayout.addView(editText);
+        InputMethodManager imm = context.getSystemService(InputMethodManager.class);
+        /*
+        调用输入法失败
+        if (!hasServedByInputMethodLocked(view)) {
+                ImeTracker.forLogging().onFailed(statsToken, ImeTracker.PHASE_CLIENT_VIEW_SERVED);
+                ImeTracker.forLatency().onShowFailed(statsToken,
+                        ImeTracker.PHASE_CLIENT_VIEW_SERVED, ActivityThread::currentApplication);
+                Log.w(TAG, "Ignoring showSoftInput() as view=" + view + " is not served.");
+                return false;
+            }
+
+        ViewRootImpl mCurRootView; null -> getServedViewLocked() null -> hasServedByInputMethodLocked false
+        * */
+        editText.setOnClickListener(v -> {
+            boolean showSoftInput = imm.showSoftInput(v, InputMethodManager.SHOW_IMPLICIT);
+            Log.i(TAG, "onClick editText showSoftInput:" + showSoftInput);
+        });
     }
 
     private void initBtnView(Context context) {
